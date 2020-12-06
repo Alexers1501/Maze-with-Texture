@@ -66,5 +66,5 @@ void Player::turn_left(double angle)
 {
 	_dir -= angle;
 	if (_dir < 0.)
-		_dir =+ 2. * Pi;
+		_dir += 2. * Pi;
 }

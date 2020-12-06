@@ -12,12 +12,21 @@
 #include "Window.h"
 #include "Map.h"
 #include "Player.h"
+#include "Texture.h"
 
 class RayCastingWindow: public Window
 {
 protected:
 	std::shared_ptr<Map> _map;
 	std::shared_ptr<Player> _player;
+	std::shared_ptr<Texture> _wall_texture {nullptr};
+
+	bool _textured { true };
+
+	void draw_col(int col, int h);
+
+	void draw_textured_col(int col, int h, double tx);
+
 public:
 	RayCastingWindow(
 			int width = DEFAULT_WIDTH,
